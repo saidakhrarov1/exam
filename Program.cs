@@ -12,7 +12,33 @@ void Main()
 
 {
     string[] array = AskWords("Введите элементы массива через пробел: ");
-    ArrayPrint(array);
+    CreateArray(array);
+    ArrayPrint(CreateArray(array));
+}
+
+string[] CreateArray(string[] array)
+{
+    int count = 0;
+    foreach (string word in array)
+    {
+        if (word.Length <= 3)
+        {
+            count++;
+        }
+    }
+
+    string[] NewArray = new string[count];
+    int index = 0;
+
+    foreach (string word in array)
+    {
+        if (word.Length <= 3)
+        {
+            NewArray[index] = word;
+            index++;
+        }
+    }
+    return NewArray;
 }
 
     string[] AskWords(string msg)
