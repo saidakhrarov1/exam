@@ -12,6 +12,7 @@ void Main()
 
 {
     string[] array = AskWords("Введите элементы массива через пробел: ");
+    ArrayPrint(array);
 }
 
     string[] AskWords(string msg)
@@ -19,6 +20,14 @@ void Main()
         System.Console.WriteLine(msg);
         string[] tempArray = Console.ReadLine()!.Split(' ');
         return tempArray;
+    }
+
+    void ArrayPrint(string[] array)
+    {
+        foreach (string word in array)
+        {
+            System.Console.Write(word + ", ");
+        }
     }
 
     Main();
